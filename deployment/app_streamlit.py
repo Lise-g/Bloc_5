@@ -10,7 +10,7 @@ st.set_page_config(
     layout="wide"
 )
 
-#DATA_URL = ('https://full-stack-assets.s3.eu-west-3.amazonaws.com/Deployment/e-commerce_data.csv')
+DATA_URL = ('https://bucket-getaround-project.s3.eu-west-3.amazonaws.com/get_around_delay_analysis.xlsx')
 
 
 ### App
@@ -26,7 +26,7 @@ st.subheader('Data')
 
 @st.cache
 def load_data():
-    data = pd.read_excel('src/get_around_delay_analysis.xlsx')
+    data = pd.read_excel(DATA_URL)
     return data
 
 dataset = load_data()
