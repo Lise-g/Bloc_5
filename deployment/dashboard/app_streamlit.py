@@ -70,7 +70,7 @@ with col1:
                         height=500,
                         width=500,
                         title_font_color="#D50425")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, theme=None, use_container_width=True)
 
 with col2:
     # proportion of canceled rentals when there is a previous rental
@@ -84,7 +84,7 @@ with col2:
                         height=500,
                         width=500,
                         title_font_color="#D50425")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, theme=None, use_container_width=True)
 
 col3, col4 = st.columns(2)
 
@@ -100,7 +100,7 @@ with col3 :
                         height=500,
                         width=500,
                         title_font_color="#D50425")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, theme=None, use_container_width=True)
 
 with col4 :
     mask = df_previous['late_checkin'] == 1
@@ -116,7 +116,7 @@ with col4 :
                         height=500,
                         width=500,
                         title_font_color="#D50425")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, theme=None, use_container_width=True)
 
 
 ### Distribution of time delta between 2 rentals
@@ -128,7 +128,7 @@ df_temp = df_previous.groupby(['time_delta_with_previous_rental_in_minutes', 'ch
 fig = px.bar(df_temp, x = 'time_delta_with_previous_rental_in_minutes', y = 'late_checkin', color = 'checkin_type')
 fig.update_layout(title={'text': "Number of late check-ins depending on time delta between 2 rentals", 'y':0.95, 'x':0.5, 'xanchor': 'center', 'yanchor': 'top'},
                     title_font_color="#D50425")
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, theme=None, use_container_width=True)
 
 
 ### Prepare the dataset for further analysis
@@ -194,7 +194,7 @@ with col1 :
                         height=500,
                         width=1000,
                         title_font_color="#D50425")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, theme=None, use_container_width=True)
 
 with col2 :
     fig = px.line(df_temp_canceled, x = 'thresholds', y = 'nb_affected',
@@ -209,7 +209,7 @@ with col2 :
                         height=500,
                         width=1000,
                         title_font_color="#D50425")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, theme=None, use_container_width=True)
 
 with col3 :
     fig = px.line(df_temp_late, x = 'thresholds', y = 'nb_affected',
@@ -224,7 +224,7 @@ with col3 :
                         height=500,
                         width=1000,
                         title_font_color="#D50425")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, theme=None, use_container_width=True)
 
 col4, col5 = st.columns(2)
 
@@ -241,7 +241,7 @@ with col4 :
                         height=500,
                         width=1000,
                         title_font_color="#D50425")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, theme=None, use_container_width=True)
 
 with col5 :
     fig = px.line(df_temp_total, x = 'thresholds', y = 'affected_revenue_in_percent_successive_rentals',
@@ -256,5 +256,5 @@ with col5 :
                         height=500,
                         width=1000,
                         title_font_color="#D50425")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, theme=None, use_container_width=True)
 
