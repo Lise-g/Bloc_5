@@ -19,8 +19,10 @@ This notebook shows the data analysis that was made in order to build the web da
 > Python script : 'deployment/dashboard/app_streamlit.py'  
 
 This script was used to build the web dashboard with Streamlit. It takes the graphs that were designed in the notebook file. As it is a dashboard, all additionnal comments were not put in there.  
-The dashboard is hosted online on a Heroku server at this URL : https://app-streamlit-getaround.herokuapp.com/  
-The source file for the analysis is hosted on an AWS S3 bucket that is publicly available at this URL : https://bucket-getaround-project.s3.eu-west-3.amazonaws.com/get_around_delay_analysis.xlsx  
+The dashboard is hosted online on a Heroku server at this URL :  
+https://app-streamlit-getaround.herokuapp.com/  
+The source file for the analysis is hosted on an AWS S3 bucket that is publicly available at this URL :  
+https://bucket-getaround-project.s3.eu-west-3.amazonaws.com/get_around_delay_analysis.xlsx  
 
 ## 2/ Online API
 
@@ -34,7 +36,8 @@ The xgboost model was saved as a joblib file and was used for the online API.
 > Python script : 'deployment/online-API/app_fastAPI.py'  
 
 This script was used to build the online API. It was made with FastAPI.  
-The API is hosted online on a Heroku server at this URL : https://app-fastapi-getaround.herokuapp.com/  
+The API is hosted online on a Heroku server at this URL :  
+https://app-fastapi-getaround.herokuapp.com/  
 
 > Notebook : 'deployment/request_api.ipynb'  
 
