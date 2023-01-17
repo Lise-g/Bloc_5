@@ -32,7 +32,7 @@ This notebook was used to build the machine learning model from the csv file tha
 A baseline model (simple linear regression) was made and an optimized model (xgboost regressor) was chosen.  
 The xgboost model was saved as a joblib file and was used for the online API.  
 
-> Model : 'deployment/online-API/xgbregressor.joblib'
+> Model : 'deployment/online-API/xgbregressor.joblib'  
 > Python script : 'deployment/online-API/app_fastAPI.py'  
 
 This script was used to build the online API. It was made with FastAPI.  

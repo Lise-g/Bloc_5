@@ -233,7 +233,7 @@ with col4 :
                     markers = True,
                     color = 'checkin_type'
                 )
-    fig.update_layout(yaxis_title='Number of rentals affected',
+    fig.update_layout(yaxis_title='Percentage of revenues',
                         xaxis_title='Level of threshold in min',
                         legend_title = 'Type of check-in',
                         title={'text': "Percentage of total revenue affected by a threshold", 'y':0.95, 'x':0.5, 'xanchor': 'center', 'yanchor': 'top'},
@@ -248,7 +248,7 @@ with col5 :
                     markers = True,
                     color = 'checkin_type'
                 )
-    fig.update_layout(yaxis_title='Number of rentals affected',
+    fig.update_layout(yaxis_title='Percentage of revenues',
                         xaxis_title='Level of threshold in min',
                         legend_title = 'Type of check-in',
                         title={'text': "Percentage of revenue from rentals that have previous rentals that would be affected by a threshold", 'y':0.95, 'x':0.5, 'xanchor': 'center', 'yanchor': 'top'},
