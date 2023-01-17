@@ -5,19 +5,31 @@ from typing import Literal, List, Union
 from fastapi import FastAPI, File, UploadFile
 import joblib
 import numpy as np
-import json
-
-
-from typing import List
 
 description = """
-Welcome to the Getaround pricing optimizer !
+Welcome to the Getaround pricing optimizer !  
 
 ## Machine Learning
 
-This is a machine learning endpoint that predicts the price for one car rental. Here is the endpoint:
+This is a machine learning endpoint that predicts the price for one car rental. Here is the endpoint:  
 
-* `/predict` which accepts this format :
+* `/predict` which accepts this format :  
+
+    { "model_key": string among this list : ['Citroën', 'Renault', 'BMW', 'Peugeot', 'Audi', 'Nissan', 'Mitsubishi', 'Mercedes', 'Volkswagen', 'Toyota', 'SEAT', 'Subaru', 'PGO', 'Opel', 'Ferrari', 'Maserati'],  
+    "mileage": integer,  
+    "engine_power": integer,  
+    "fuel": string among this list : ['diesel', 'petrol', 'hybrid_petrol'],  
+    "paint_color": string among this list : ['black', 'grey', 'blue', 'white', 'brown', 'silver', 'red', 'beige', 'green', 'orange'],  
+    "car_type": string among this list : ['estate', 'sedan', 'suv', 'hatchback', 'subcompact', 'coupe', 'convertible', 'van'],  
+    "private_parking_available": boolean,  
+    "has_gps": boolean,  
+    "has_air_conditioning": boolean,  
+    "automatic_car": boolean,  
+    "has_getaround_connect": boolean,  
+    "has_speed_regulator": boolean,  
+    "winter_tires": boolean }  
+
+  If you want to know the prediction for some feature values that are not contained in the above lists, please put the value of the list that is the closest to yours.
 
 """
 
@@ -76,7 +88,7 @@ async def predict(formFeatures: FormFeatures):
         X_topredict[item] = X_topredict[item].map({'True': True, 'False': False}) #need to force dtypes to bool in the dataframe columns, otherwise dtypes is object and the model does not recognize the data into the columns
     
     # Load model
-    loaded_model = joblib.load('../xgbregressor.joblib')
+    loaded_model = joblib.load('xgbregressor.joblib')
     
     #prediction
     prediction = loaded_model.predict(X_topredict)
