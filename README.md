@@ -5,7 +5,7 @@ This project aims at :
 - building a web dashboard in order to find the best minimum delay between two rentals,
 - building an online API for pricing optimization.
 
-> Video link of the project : 👉  👈
+> Video link of the project : 👉 https://share.vidyard.com/watch/TwuEorJGJTPDF5rZG3ZPqE? 👈
 
 Contact : Lise Gnos  
 email : lise.gnos@gmail.com  
